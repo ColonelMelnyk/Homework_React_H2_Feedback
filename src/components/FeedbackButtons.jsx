@@ -14,6 +14,11 @@ export const FeedbackButtons = ({options, handleFeedback}) => {
         )
 };
 FeedbackButtons.propTypes = {
-    options: PropTypes.arrayOf().isRequired,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      good: PropTypes.string.isRequired,
+      neutral: PropTypes.string.isRequired,
+      bad: PropTypes.string.isRequired,
+    })
+    ).isRequired,
     handleFeedback: PropTypes.func.isRequired,
 };
